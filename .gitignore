@@ -1,0 +1,6 @@
+.idea/
+*.swp
+*nohup.out
+*.log
+*.exe
+.DS_Store
