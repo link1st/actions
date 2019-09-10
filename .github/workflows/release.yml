@@ -3,7 +3,10 @@ on:
   create:
     tags:
       - v*
+
+
 jobs:
+
   release:
   name: Release on GitHub
   runs-on: ubuntu-latest
@@ -12,12 +15,12 @@ jobs:
     - name: Check out code
     uses: actions/checkout@v1
 
-    - name: Validates GO releaser config
+      - name: Validates GO releaser config
     uses: docker://goreleaser/goreleaser:latest
     with:
     args: check
 
-    - name: Create release on GitHub
+      - name: Create release on GitHub
     uses: docker://goreleaser/goreleaser:latest
     with:
     args: release
