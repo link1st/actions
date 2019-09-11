@@ -16,6 +16,25 @@ jobs:
           go-version: 1.12
         id: go
 
+      - name: pwd
+        run: pwd
+
+      - name: CheckFile
+        run: ls -lah
+
+      - name: go env
+        run: go env
+
+      - name: go path
+        run: |
+          ls -lah /home/runner/go
+          ls -lah /home/runner/go/src
+
+      - name: mv
+        run: |
+          mv /home/runner/go/actions /home/runner/go/src
+          cd /home/runner/go/src
+
       - name: Check out code into the Go module directory
         uses: actions/checkout@v1
 
@@ -26,15 +45,6 @@ jobs:
               curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
               dep ensure
           fi
-
-      - name: pwd
-        run: pwd
-
-      - name: CheckFile
-        run: ls -lah
-
-      - name: go env
-        run: go env
 
       - name: Build
         run: go build -v .

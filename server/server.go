@@ -7,8 +7,20 @@
 
 package server
 
-import "fmt"
+import (
+	"fmt"
+	uuid "github.com/satori/go.uuid"
+)
 
 func Info() {
 	fmt.Println("server into")
+
+	var (
+		requestId string
+	)
+	UUID := uuid.NewV4()
+	requestId = UUID.String()
+
+	fmt.Println("uuid", requestId)
+
 }
