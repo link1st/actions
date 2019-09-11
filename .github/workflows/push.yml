@@ -25,10 +25,10 @@ jobs:
       - name: go env
         run: go env
 
-      - name: go path
-        run: |
-          ls -lah $(go env GOPATH)
-          ls -lah $(go env GOPATH)/src
+#      - name: go path
+#        run: |
+#          ls -lah $(go env GOPATH)
+#          ls -lah $(go env GOPATH)/src
 
 #      - name: mv
 #        run: |
