@@ -27,6 +27,15 @@ jobs:
               dep ensure
           fi
 
+      - name: pwd
+        run: pwd
+
+      - name: CheckFile
+        run: ls -lah
+
+      - name: go env
+        run: go env
+
       - name: Build
         run: go build -v .
 
