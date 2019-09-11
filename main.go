@@ -8,10 +8,12 @@
 package main
 
 import (
+	"actions/server"
 	"fmt"
 	"time"
 )
 
-func main()  {
+func main() {
+	server.Info()
 	fmt.Println(time.Now())
 }
